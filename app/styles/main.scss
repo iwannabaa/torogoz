@@ -2,6 +2,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,500,700,300");
 
 .browsehappy {
   margin: 0.2em 0;
@@ -14,78 +15,118 @@ body {
   padding: 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+/** 
+--------------------------------------------------------
+ HOME
+--------------------------------------------------------
+*/
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+.home-page {
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+  .slider img {
+    max-width: 100%;
+  }
+
+  .section-menu {
+    background: #e7eef3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .menu {
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .menu__item {
+      width: 33.333333%;
+      display: block;
+      float: left;
+      text-align: center;
+    }
+
+    .menu__item a {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      text-indent: -9999px;
+      background: url("../images/menu-icons-sprite.png");
+    }
+
+    .menu__item.active a {
+      background-position-y: -40px;
+    }
+
+    .menu__item-places a {
+      background-position-x: -40px;
+    } 
+
+    .menu__item-offers a {
+      background-position-x: -80px;
+    } 
+  }
+
+  .categories {
+
+    .categories__list {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+
+      .category__item {
+        padding-left: 0;
+        padding-right: 0;
+        display: relative;
+
+        img {
+          max-width: 100%;
+        }
+
+        .category__info {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .category__icon {
+          display: block;
+          margin: 0 auto;
+          width: 55px;
+          height: 40px;
+          background: url("../images/icon-categories-sprite.png");
+          background-size: 330px;
+        }
+
+        .category__icon--restaurant {
+          background-position-x: -55px; 
+        }
+
+        .category__icon--bar {
+          background-position-x: -110px; 
+        }
+
+        .category__icon--cafe {
+          background-position-x: -165px; 
+        }
+
+        .category__icon--disco {
+          background-position-x: -220px; 
+        }
+
+        .category__icon--shop {
+          background-position-x: -275px; 
+        }
+
+        .category__title {
+          text-transform: uppercase;
+          font-weight: 500;
+          color: #FFFFFF;
+          font-family: 'Roboto', sans-serif;
+          letter-spacing: 1px;
+        }
+      }
+    }
   }
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
