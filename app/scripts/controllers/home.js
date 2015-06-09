@@ -10,4 +10,8 @@
 angular.module('torogozApp')
   .controller('MainCtrl', function ($scope) {
     $scope.$parent.containerClass = 'home-page';
+    $scope.checked = true;
+    $scope.toggleMenu = function() {
+      $scope.checked = !$scope.checked;
+    };
   });
